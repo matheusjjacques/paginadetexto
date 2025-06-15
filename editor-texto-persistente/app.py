@@ -33,12 +33,12 @@ def save_data(data):
 @app.route('/')
 def index():
     """Serve a página principal"""
-    return send_from_directory('../frontend', 'index.html')
+    return send_from_directory('frontend', 'index.html')
 
 @app.route('/<path:filename>')
 def serve_static(filename):
     """Serve arquivos estáticos do frontend"""
-    return send_from_directory('../frontend', filename)
+    return send_from_directory('frontend', filename)
 
 @app.route('/api/text', methods=['GET'])
 def get_text():
@@ -138,4 +138,3 @@ if __name__ == '__main__':
     
     # Executar servidor
     app.run(host='0.0.0.0', port=5000, debug=True)
-
